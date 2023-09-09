@@ -1,4 +1,5 @@
-const calculate = depth => {
+// original "forest fire" function: avoid three points in arithmetric progression
+const a229037 = depth => {
 	const result = new Int32Array (depth)
 	let progress = 0
 	let maxVal = 1
@@ -39,4 +40,4 @@ const scatterplot = (sequence, zoomOut = 1, opacity = 255) => {
 }
 
 window.drawfire = (depth, zoomOut, opacity) =>
-	scatterplot (calculate (depth), zoomOut, opacity)
+	scatterplot (a229037 (depth), zoomOut, opacity)
