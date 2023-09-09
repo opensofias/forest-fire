@@ -1,18 +1,20 @@
 const calculate = depth => {
 	const result = new Int32Array (depth)
 	let progress = 0
+	let maxVal = 1
 	while (progress < depth) {
-		const avoid = new Set ()
+		const avoid = new Int8Array ((maxVal + 1) * 2)
 		let steps = 1
 		while (steps * 2 < progress + 1) {
-			avoid.add (
+			avoid [
 				2 * result [progress - steps] -
 				result [progress - steps * 2]
-			)
+			] = 1
 			steps ++
 		}
 		let candidate = 0
-		while (avoid.has (candidate)) candidate ++
+		while (avoid [candidate]) candidate ++
+		maxVal = Math.max (maxVal, candidate)
 		result [progress] = candidate
 		progress ++
 	}
