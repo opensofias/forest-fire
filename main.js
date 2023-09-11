@@ -97,4 +97,4 @@ const scatterplot = (sequence, zoomOut = 1, opacity = 255) => {
 }
 
 window.drawfire = (depth, zoomOut, opacity) =>
-	scatterplot (A100480 (depth), zoomOut, opacity)
+	scatterplot (filterSequence (a229037_filter, depth), zoomOut, opacity)
